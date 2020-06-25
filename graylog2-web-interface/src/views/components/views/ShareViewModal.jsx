@@ -59,6 +59,7 @@ class ShareViewModal extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
+
     this.state = {
       viewSharing: null,
       loaded: false,
@@ -95,6 +96,7 @@ class ShareViewModal extends React.Component<Props, State> {
 
     promise.then(() => {
       onClose(viewSharing);
+
       UserNotification.success(`Sharing ${viewTypeLabel} "${view.title}" was successful!`, 'Success!');
     }).catch((error) => {
       UserNotification.error(`Sharing ${viewTypeLabel} failed: ${error?.additional?.body?.message ?? error}`, 'Error!');
